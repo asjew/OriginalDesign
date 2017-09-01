@@ -6,19 +6,44 @@ void setup()
 
 void draw()
 {
-  //head shape
-  noFill();
-  arc(240, 250, 60, 60, 0-PI/4, 5*PI/4);
   //left ear
   line(219, 228, 225, 190);
-  line(224, 190, 230, 228);
+  line(224, 190, 230, 220);
   //right ear
   line(250, 228, 255, 190);
   line(255, 190, 260, 228);
-  //top of head
-  line(230, 228, 250, 228);
+  //head shape
+  headShape();
   //body
-  noFill();
+  body();
+  //left hand
+  leftHand();
+  //right hand
+  rightHand();
+  //left foot
+  leftFoot();
+  //right foot
+  rightFoot();
+  //tail
+  beginShape();
+  vertex(260, 325);
+  vertex(265, 315);
+  vertex(270, 305);
+  vertex(280, 240);
+  vertex(290, 250); 
+  endShape(CLOSE);
+}
+
+void headShape()
+{
+  fill(255, 218, 8);
+  ellipse(240, 250, 60, 60);
+  //arc(240, 250, 60, 60, 0-PI/4, 5*PI/4);
+}
+
+void body()
+{
+  fill(255, 218, 8);
   beginShape();
   curveVertex(215, 270);
   curveVertex(215, 270);
@@ -27,7 +52,19 @@ void draw()
   curveVertex(265, 270);
   curveVertex(265, 270);
   endShape();
-  //left hand
+}
+void leftFoot()
+{
+  fill(255, 218, 8);
+  ellipse(225, 330, 10, 15);
+}
+void rightFoot()
+{
+  fill(255, 218, 8);
+  ellipse(255, 330, 10, 15);
+}
+void leftHand()
+{
   noFill();
   beginShape();
   curveVertex(220, 290);
@@ -37,7 +74,9 @@ void draw()
   curveVertex(235, 290);
   curveVertex(235, 290);
   endShape();
-  //right hand
+}
+void rightHand()
+{
   noFill();
   beginShape();
   curveVertex(245, 290);
@@ -47,19 +86,4 @@ void draw()
   curveVertex(260, 290);
   curveVertex(260, 290);
   endShape();
-  //left foot
-  ellipse(225, 330, 10, 15);
-  //right foot
-  ellipse(255, 330, 10, 15);
-  //tail
-  beginShape();
-  vertex(260, 325);
-  vertex(265, 315);
-  vertex(270, 305);
-  vertex(275, 290);
-  vertex(280, 270);
-  vertex(275, 260);
-  vertex(270, 245);
-  vertex(265, 
-  endShape(CLOSE);
 }
